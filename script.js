@@ -25,7 +25,7 @@ function loadSong(song) {
   // audio.src = `https://www.soundhelix.com/examples/mp3/SoundHelix-Song-${songIndex + 1}.mp3`;
 //   cover.src = `https://picsum.photos/seed/${song}/200/200`; // Random image based on song name
   audio.src = `song/song-name${songIndex + 1}.mp3`;
-  cover.src = 'img/_ (4).jpeg'
+  cover.src = 'img/img2.jpeg'
 }
 
 // Play Song
