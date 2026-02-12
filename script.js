@@ -10,22 +10,34 @@ const title = document.getElementById('title');
 const cover = document.getElementById('cover');
 
 // Song titles
-const songs = ['hey', 'summer', 'ukulele', 'song4','song5','song6','song7',];
-
+const songs = [
+  {
+    title: 'Lovely',
+    artist: 'Billie Eilish & Khalid',
+    cover: 'img1',
+    file: 'song-name1'
+  },
+  {
+    title: 'Summer Vibes',
+    artist: 'Artist Two',
+    cover: 'img2',
+    file: 'song-name2'
+  }
+];
 // Keep track of song
-let songIndex = 2;
+let songIndex = 0;
 
 // Initially load song details into DOM
 loadSong(songs[songIndex]);
 
 function loadSong(song) {
-  title.innerText = song;
-  // NOTE: In a real app, these would be local files like 'music/song.mp3'
-  // using placeholders for demonstration:
-  // audio.src = `https://www.soundhelix.com/examples/mp3/SoundHelix-Song-${songIndex + 1}.mp3`;
-//   cover.src = `https://picsum.photos/seed/${song}/200/200`; // Random image based on song name
-  audio.src = `song/song-name${songIndex + 1}.mp3`;
-  cover.src = `img/img${songIndex + 1}.jpeg`;
+  // If 'song' is missing, stop the function immediately so it doesn't crash
+  if (!song) return; 
+
+  title.innerText = song.title;
+  document.getElementById('artist').innerText = song.artist;
+  audio.src = `song/${song.file}.mp3`;
+  cover.src = `img/${song.cover}.jpeg`;
 }
 
 // Play Song
@@ -35,6 +47,21 @@ function playSong() {
   playBtn.querySelector('i.fas').classList.add('fa-pause');
 
   audio.play();
+
+  for(let i = 0; i < 10; i++) {
+    createHeart();
+  }
+}
+
+function createHeart() {
+  const heart = document.createElement('div');
+  heart.classList.add('heart');
+  heart.innerHTML = '❤️';
+  heart.style.left = Math.random() * 100 + 'vw';
+  heart.style.animationDuration = (Math.random() * 2 + 3) + 's';
+  document.body.appendChild(heart);
+  
+  setTimeout(() => { heart.remove(); }, 3000);
 }
 
 // Pause Song

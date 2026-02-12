@@ -80,7 +80,7 @@ h5{
   background: rgb(192, 191, 191);
   cursor: pointer;
   margin: 10px 0;
-  height:2px;
+  height:1px;
   width: 100%;
   margin-top: 20px;
 }
@@ -90,13 +90,14 @@ h5{
   border-radius: 5px;
   height: 100%;
   width: 0%;
+  height: 2px;
   transition: width 0.1s linear;
 }
 
 .navigation{
   display: flex;
-  justify-content: space-around;
-  margin-bottom: 20px;
+  justify-content: space-between;
+  margin: 15px 0px;
 }
 
 .action-btn {
@@ -114,7 +115,28 @@ h5{
   font-size: small;
 }
 
+.transcript::-webkit-scrollbar {
+  width: 5px;
+}
+.transcript::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
 .music-container.play .img-container img {
   animation-play-state: running;
 }
 
+.heart {
+  position: absolute;
+  color: #ff4d6d;
+  font-size: 20px;
+  user-select: none;
+  pointer-events: none;
+  animation: floatUp 3s linear forwards;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(-500px) rotate(360deg); opacity: 0; }
+}
