@@ -12,16 +12,37 @@ const cover = document.getElementById('cover');
 // Song titles
 const songs = [
   {
-    title: 'Lovely',
-    artist: 'Billie Eilish & Khalid',
-    cover: 'img1',
+    title: '😜Sorry😜',
+    artist: 'Justin Beiber',
+    cover: 'img-1',
     file: 'song-name1'
   },
   {
-    title: 'Summer Vibes',
-    artist: 'Artist Two',
-    cover: 'img2',
+    title: 'Phyit T Mu',
+    artist: 'Shine',
+    cover: 'img-2',
     file: 'song-name2'
+  }
+  ,
+  {
+    title: 'Sukidakara',
+    artist: 'Yuika',
+    cover: 'img-3',
+    file: 'song-name3'
+  }
+  ,
+  {
+    title: 'မခူးရက်ခဲ့ပါ',
+    artist: 'THOAZZ',
+    cover: 'img-4',
+    file: 'song-name4',
+  }
+  ,
+  {
+    title: 'Sorry',
+    artist: 'Justin Bieber',
+    cover: 'img3',
+    file: 'song-name3',
   }
 ];
 // Keep track of song
@@ -37,7 +58,7 @@ function loadSong(song) {
   title.innerText = song.title;
   document.getElementById('artist').innerText = song.artist;
   audio.src = `song/${song.file}.mp3`;
-  cover.src = `img/${song.cover}.jpeg`;
+  cover.src = `img/${song.cover}.jpg`;
 }
 
 // Play Song
